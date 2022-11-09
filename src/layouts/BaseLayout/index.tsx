@@ -2,8 +2,7 @@ import React from 'react'
 import Header from '../Header'
 import { Breadcrumb, Layout } from 'antd'
 import SideBar from '../SideBar'
-import { Outlet } from 'react-router-dom'
-
+import { Outlet } from "react-router-dom";
 const BaseLayout = () => {
     const { Content } = Layout;
     return (
