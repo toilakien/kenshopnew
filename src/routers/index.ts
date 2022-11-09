@@ -1,8 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useRoutes } from "react-router-dom";
+import AuthRoute from "./AuthRoute";
+import MainRoute from "./MainRoute";
 
-const index = () => {};
+const Routers = () => {
+  return useRoutes([AuthRoute, MainRoute]);
+};
 
-index.propTypes = {};
-
-export default index;
+export default Routers;

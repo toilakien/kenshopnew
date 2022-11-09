@@ -5,7 +5,7 @@ import SideBar from '../SideBar'
 import { Outlet } from "react-router-dom";
 const BaseLayout = () => {
     const { Content } = Layout;
-    return (
+    return (    
         <Layout>
             <Header />
             <Layout>
