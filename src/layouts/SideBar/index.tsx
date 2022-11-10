@@ -6,24 +6,75 @@ import {
     UserOutlined
 } from "@ant-design/icons";
 const SideBar = () => {
+    const basenav = [
+        {
+            icon: UserOutlined,
+            label: "Sản phẩm",
+            children: [
+                {
+                    subkey: "",
+                    label: "Ô tô"
+                },
+                {
+                    subkey: "",
+                    label: "Xe máy"
+                },
+                {
+                    subkey: "",
+                    label: "Xe Điện"
+                },
+            ]
+        },
+        {
+            icon: LaptopOutlined,
+            label: "Laptop",
+            children: [
+                {
+                    subkey: "",
+                    label: "Az"
+                },
+                {
+                    subkey: "",
+                    label: "770"
+                },
+                {
+                    subkey: "",
+                    label: "991"
+                },
+            ]
+        },
+        {
+            icon: NotificationOutlined,
+            label: "Quần áo",
+            children: [
+                {
+                    subkey: "",
+                    label: "Áo khoác"
+                },
+                {
+                    subkey: "",
+                    label: "Áo sơ mi"
+                },
+                {
+                    subkey: "",
+                    label: "Áo kk"
+                },
+            ]
+        },
+    ]
     const { Sider } = Layout;
-    const items2: MenuProps["items"] = [
-        UserOutlined,
-        LaptopOutlined,
-        NotificationOutlined
-    ].map((icon, index) => {
+    const items2: MenuProps["items"] = basenav.map((base, index) => {
         const key = String(index + 1);
 
         return {
-            key: `sub${key}`,
-            icon: React.createElement(icon),
-            label: `subnav ${key}`,
+            key: key,
+            icon: React.createElement(base.icon),
+            label: base.label,
 
-            children: new Array(4).fill(null).map((_, j) => {
-                const subKey = index * 4 + j + 1;
+            children: base.children.map((chi, index) => {
                 return {
-                    key: subKey,
-                    label: `option${subKey}`
+                    key: index,
+                    label: chi.label
                 };
             })
         };

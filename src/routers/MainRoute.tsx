@@ -1,13 +1,16 @@
 import React from "react";
 import BaseLayout from "../layouts/BaseLayout";
+import { AuthGrand } from "../utils/AuthGrand/AuthGrand";
 
 const MainRoute = {
     path: "/",
     element: (
-        <BaseLayout />
+        <AuthGrand>
+            <BaseLayout />
+        </AuthGrand>
     ),
     children: [
-        
+
     ]
 };
 
