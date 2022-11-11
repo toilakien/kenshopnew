@@ -4,7 +4,6 @@ import CategoryPage from "../pages/CategoryPage";
 import Dashbound from "../pages/Dashbound";
 import ProductPage from "../pages/ProductPage";
 import { AuthGrand } from "../utils/AuthGrand/AuthGrand";
-import { GuestGrand } from "../utils/AuthGrand/GuestGrand";
 
 const MainRoute = {
     path: "/",

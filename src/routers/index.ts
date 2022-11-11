@@ -1,4 +1,3 @@
-import React from "react";
 import { useRoutes } from "react-router-dom";
 import AuthRoute from "./AuthRoute";
 import MainRoute from "./MainRoute";

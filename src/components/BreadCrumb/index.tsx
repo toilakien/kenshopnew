@@ -10,5 +10,4 @@ const BreadCrumb = () => {
         </Breadcrumb>
     )
 }
-
 export default BreadCrumb;
