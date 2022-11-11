@@ -84,8 +84,8 @@ const SideBar = () => {
         <Sider width={200} style={{ background: "#fff" }}>
             <Menu
                 mode="inline"
-                defaultSelectedKeys={["1"]}
-                defaultOpenKeys={["sub1"]}
+                // defaultSelectedKeys={["1"]}
+                // defaultOpenKeys={["sub1"]}
                 style={{ height: "100%", borderRight: 0 }}
                 items={items2}
             />
