@@ -2,9 +2,14 @@ import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import BaseLayout from './layouts/BaseLayout';
+import { BrowserRouter } from 'react-router-dom';
+import Routers from './routers';
 function App() {
   return (
-    <BaseLayout />
+    <BrowserRouter>
+      <Routers />
+      {/* <BaseLayout /> */}
+    </BrowserRouter>
   );
 }
 
