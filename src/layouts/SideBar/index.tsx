@@ -7,9 +7,19 @@ import {
     CarOutlined
 } from "@ant-design/icons";
 import { Link, useNavigate } from 'react-router-dom';
-import Dashbound from '../../pages/Dashbound';
 const SideBar = () => {
     const basenav = [
+        {
+            icon: UserOutlined,
+            label: "Dashbound",
+            children: [
+                {
+                    icon: <Link to="/dashbound"><CarOutlined /></Link>,
+                    label: "Dashbound",
+                },
+
+            ]
+        },
         {
             icon: UserOutlined,
             label: "Sản phẩm",
