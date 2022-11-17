@@ -6,7 +6,7 @@ import {
     UserOutlined,
     CarOutlined
 } from "@ant-design/icons";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const SideBar = () => {
     const basenav = [
         {
@@ -17,7 +17,6 @@ const SideBar = () => {
                     icon: <Link to="/dashbound"><CarOutlined /></Link>,
                     label: "Dashbound",
                 },
-
             ]
         },
         {
@@ -29,10 +28,8 @@ const SideBar = () => {
                     label: "Ô tô",
                 },
                 {
-
                     icon: <Link to="/category"> < LaptopOutlined /></Link>,
                     label: "Xe máy",
-
                 },
                 {
                     icon: <Link to=""></Link>,
@@ -67,23 +64,18 @@ const SideBar = () => {
                 {
                     icon: <Link to=""></Link>,
                     label: "Áo khoác",
-
                 },
                 {
                     icon: <Link to=""></Link>,
                     uri: '/product',
-
                 },
                 {
                     icon: <Link to=""></Link>,
                     label: "Áo kk",
-
-
                 },
             ]
         },
     ]
-    const navigate = useNavigate();
     const { Sider } = Layout;
     const items2: MenuProps["items"] = basenav.map((base, index) => {
         const key = String(index + 1);
@@ -106,7 +98,6 @@ const SideBar = () => {
     return (
         <Sider width={200} style={{ background: "#fff" }}>
             <Menu
-
                 mode="inline"
                 defaultSelectedKeys={["1"]}
                 defaultOpenKeys={["sub1"]}
