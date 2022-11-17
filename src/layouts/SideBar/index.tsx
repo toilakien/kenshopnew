@@ -39,13 +39,11 @@ const SideBar = () => {
         },
         {
             icon: LaptopOutlined,
-            label: "Laptop",
+            label: "Danh mục",
             children: [
                 {
-                    icon: <Link to="">
-
-                    </Link>,
-                    label: "Az",
+                    icon: <Link to="/category"></Link>,
+                    label: "New",
                 },
                 {
                     icon: <Link to=""></Link>,
@@ -57,24 +55,7 @@ const SideBar = () => {
                 },
             ]
         },
-        {
-            icon: NotificationOutlined,
-            label: "Quần áo",
-            children: [
-                {
-                    icon: <Link to=""></Link>,
-                    label: "Áo khoác",
-                },
-                {
-                    icon: <Link to=""></Link>,
-                    uri: '/product',
-                },
-                {
-                    icon: <Link to=""></Link>,
-                    label: "Áo kk",
-                },
-            ]
-        },
+
     ]
     const { Sider } = Layout;
     const items2: MenuProps["items"] = basenav.map((base, index) => {
@@ -85,11 +66,11 @@ const SideBar = () => {
             icon: React.createElement(base.icon),
             label: base.label,
 
-            children: base.children.map((chi, index) => {
+            children: base.children.map((element, index) => {
                 return {
                     key: index,
-                    label: chi.label,
-                    icon: chi.icon
+                    label: element.label,
+                    icon: element.icon
                 };
             })
         };
@@ -99,8 +80,8 @@ const SideBar = () => {
         <Sider width={200} style={{ background: "#fff" }}>
             <Menu
                 mode="inline"
-                defaultSelectedKeys={["1"]}
-                defaultOpenKeys={["sub1"]}
+                // defaultSelectedKeys={["1"]}
+                // defaultOpenKeys={["sub1"]}
                 style={{ height: "100%", borderRight: 0 }}
                 items={items2}
             />
