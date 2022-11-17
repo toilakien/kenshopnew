@@ -3,8 +3,11 @@ import React from 'react'
 import {
     LaptopOutlined,
     NotificationOutlined,
-    UserOutlined
+    UserOutlined,
+    CarOutlined
 } from "@ant-design/icons";
+import { Link, useNavigate } from 'react-router-dom';
+import Dashbound from '../../pages/Dashbound';
 const SideBar = () => {
     const basenav = [
         {
@@ -12,16 +15,18 @@ const SideBar = () => {
             label: "Sản phẩm",
             children: [
                 {
-                    subkey: "",
-                    label: "Ô tô"
+                    icon: <Link to="/product"><CarOutlined /></Link>,
+                    label: "Ô tô",
                 },
                 {
-                    subkey: "",
-                    label: "Xe máy"
+
+                    icon: <Link to="/category"> < LaptopOutlined /></Link>,
+                    label: "Xe máy",
+
                 },
                 {
-                    subkey: "",
-                    label: "Xe Điện"
+                    icon: <Link to=""></Link>,
+                    label: "Xe Điện",
                 },
             ]
         },
@@ -30,16 +35,18 @@ const SideBar = () => {
             label: "Laptop",
             children: [
                 {
-                    subkey: "",
-                    label: "Az"
+                    icon: <Link to="">
+
+                    </Link>,
+                    label: "Az",
                 },
                 {
-                    subkey: "",
-                    label: "770"
+                    icon: <Link to=""></Link>,
+                    label: "770",
                 },
                 {
-                    subkey: "",
-                    label: "991"
+                    icon: <Link to=""></Link>,
+                    label: "991",
                 },
             ]
         },
@@ -48,20 +55,25 @@ const SideBar = () => {
             label: "Quần áo",
             children: [
                 {
-                    subkey: "",
-                    label: "Áo khoác"
+                    icon: <Link to=""></Link>,
+                    label: "Áo khoác",
+
                 },
                 {
-                    subkey: "",
-                    label: "Áo sơ mi"
+                    icon: <Link to=""></Link>,
+                    uri: '/product',
+
                 },
                 {
-                    subkey: "",
-                    label: "Áo kk"
+                    icon: <Link to=""></Link>,
+                    label: "Áo kk",
+
+
                 },
             ]
         },
     ]
+    const navigate = useNavigate();
     const { Sider } = Layout;
     const items2: MenuProps["items"] = basenav.map((base, index) => {
         const key = String(index + 1);
@@ -74,7 +86,8 @@ const SideBar = () => {
             children: base.children.map((chi, index) => {
                 return {
                     key: index,
-                    label: chi.label
+                    label: chi.label,
+                    icon: chi.icon
                 };
             })
         };
@@ -83,9 +96,10 @@ const SideBar = () => {
     return (
         <Sider width={200} style={{ background: "#fff" }}>
             <Menu
+
                 mode="inline"
-                // defaultSelectedKeys={["1"]}
-                // defaultOpenKeys={["sub1"]}
+                defaultSelectedKeys={["1"]}
+                defaultOpenKeys={["sub1"]}
                 style={{ height: "100%", borderRight: 0 }}
                 items={items2}
             />

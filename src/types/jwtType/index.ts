@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export const AUTH = {
   LOGIN: "LOGIN",
   LOGOUT: "LOGOUT",
@@ -15,3 +17,4 @@ export interface ACTION {
   type?: any;
   payload?: any;
 }
+
