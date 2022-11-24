@@ -11,7 +11,7 @@ const LoginPage = () => {
         backgroundImage:
           'url("http://khohinhnen.com/wp-content/uploads/2014/12/hinh-nen-may-tinh-cuc-dep-20.jpg")',
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100%",
+        backgroundSize: "cover",
       }}
     >
       <Col span={24}>
