@@ -1,0 +1,78 @@
+.login-wrapper {
+  width: 20%;
+  padding: 20px;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  background-color: #f5f5f5;
+}
+.login-title h1 {
+  text-align: center;
+}
+.form-wrapper {
+}
+.form-item {
+  margin-top: 10px;
+  display: block;
+}
+.form-item label {
+  font-size: 1rem;
+}
+.form-item input {
+  outline: none;
+  border: 1px solid #ddd;
+}
+.form-item button {
+  width: 100px;
+  position: relative;
+  left: calc(50% - 50px);
+  border: 1px solid #ddd;
+  background-color: #1890ff;
+  color: #ffffff;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.form-item button:hover {
+  opacity: 1;
+  background-color: #0986fb;
+}
+@media only screen and (max-width: 640px) {
+  .login-wrapper {
+    width: 60%;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 20%;
+    background-color: #f5f5f5;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .login-wrapper {
+    width: 40%;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 20%;
+    background-color: #f5f5f5;
+  }
+}
+@media only screen and (min-width: 1024px) {
+    .login-wrapper {
+      width: 20%;
+      padding: 20px;
+      margin: 0 auto;
+      position: relative;
+      top: 25%;
+      background-color: #f5f5f5;
+    }
+  }
+  @media only screen and (min-width: 1280) {
+    .login-wrapper {
+      width: 40%;
+      padding: 20px;
+      margin: 0 auto;
+      position: relative;
+      top: 20%;
+      background-color: #f5f5f5;
+    }
+  }
