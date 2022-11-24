@@ -1,5 +1,7 @@
 const API_URL = {
-  auth: {},
+  auth: {
+    login: `/authenication/login`,
+  },
   product: {},
   category: {},
 };

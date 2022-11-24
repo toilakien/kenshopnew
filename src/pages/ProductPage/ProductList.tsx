@@ -4,6 +4,7 @@ import React from 'react';
 
 interface DataType {
     key: string;
+    stt?:number,
     name: string;
     age: number;
     address: string;
@@ -11,6 +12,12 @@ interface DataType {
 }
 
 const columns: ColumnsType<DataType> = [
+    {
+        title: 'Stt',
+        dataIndex: 'stt',
+        key: 'stt',
+        render: text => <a>{text}</a>,
+    },
     {
         title: 'Name',
         dataIndex: 'name',
@@ -62,6 +69,7 @@ const columns: ColumnsType<DataType> = [
 const data: DataType[] = [
     {
         key: '1',
+        stt:1,
         name: 'John Brown',
         age: 32,
         address: 'New York No. 1 Lake Park',
@@ -69,6 +77,7 @@ const data: DataType[] = [
     },
     {
         key: '2',
+        stt:2,
         name: 'Jim Green',
         age: 42,
         address: 'London No. 1 Lake Park',
@@ -76,6 +85,7 @@ const data: DataType[] = [
     },
     {
         key: '3',
+        stt:3,
         name: 'Joe Black',
         age: 32,
         address: 'Sidney No. 1 Lake Park',

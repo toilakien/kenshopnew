@@ -1,13 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../hook/useAuth";
 
 export const AuthGrand = ({ children }: { children: any }) => {
   const navigate = useNavigate();
-  const islogined = true;
+  const { isLogined } = useAuth();
+
   React.useEffect(() => {
-    if (!islogined) {
-      navigate("/login")
+    if (!isLogined) {
+      navigate("/login");
     }
-  })
+  });
   return children;
 };
