@@ -17,28 +17,22 @@ import {
 import React, { useState } from "react";
 import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 import logo from "../../../src/logo.png";
+import useAuth from "../../hook/useAuth";
 const Header = () => {
+  const { logout } = useAuth();
   const { Header } = Layout;
   const [open, setOpen] = useState<boolean>(false);
   const items = [
     {
       key: "1",
       icon: <SettingOutlined />,
-      label: (
-        <a target="_blank" rel="noopener noreferrer" href="#">
-          Acount seting
-        </a>
-      ),
+      label: <a href="#">Acount seting</a>,
     },
     {
       key: "2",
       icon: <LogoutOutlined />,
 
-      label: (
-        <a target="_blank" rel="noopener noreferrer" href="#">
-          Logout
-        </a>
-      ),
+      label: <button onClick={() => logout()}>Logout</button>,
     },
   ];
   return (

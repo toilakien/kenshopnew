@@ -5,11 +5,13 @@ import useAuth from "../../hook/useAuth";
 export const GuestGrand = ({ children }: { children: any }) => {
   const navigate = useNavigate();
   const { isLogined } = useAuth();
+  const a = localStorage.getItem("serviceToken");
+  console.log(typeof a);
 
   React.useEffect(() => {
-    if (isLogined) {
+    if (a) {
       navigate("/dashbound");
     }
-  });
+  }, [a]);
   return children;
 };
