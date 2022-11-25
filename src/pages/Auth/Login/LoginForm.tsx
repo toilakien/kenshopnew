@@ -3,6 +3,7 @@ import React from "react";
 import { useFormik } from "formik";
 import useAuth from "../../../hook/useAuth";
 import formstyles from "./form.module.css";
+import { notification } from "antd";
 const LoginForm = () => {
   const { login } = useAuth();
   const formik = useFormik({
@@ -10,15 +11,17 @@ const LoginForm = () => {
       username: "",
       password: "",
     },
-    onSubmit: (values) => {
-      login(values.username, values.password);
+    onSubmit: async (values) => {
+      await login(values.username, values.password).then(
+        notification.success({ message: "Login successfully !" })
+      );
     },
   });
 
   return (
     <div className={formstyles["login-wrapper"]}>
       <div className={formstyles["login-title"]}>
-          <h1>Đăng nhập</h1>
+        <h1>Đăng nhập</h1>
       </div>
       <form
         className={formstyles["form-wrapper"]}

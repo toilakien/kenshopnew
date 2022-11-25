@@ -2,7 +2,6 @@ import { Layout, Menu, MenuProps } from "antd";
 import React from "react";
 import {
   LaptopOutlined,
-  NotificationOutlined,
   UserOutlined,
   CarOutlined,
 } from "@ant-design/icons";

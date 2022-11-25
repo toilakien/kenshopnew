@@ -16,13 +16,13 @@ const columns: ColumnsType<DataType> = [
         title: 'Stt',
         dataIndex: 'stt',
         key: 'stt',
-        render: text => <a>{text}</a>,
+        // render: text => <a>{text}</a>,
     },
     {
         title: 'Name',
         dataIndex: 'name',
         key: 'name',
-        render: text => <a>{text}</a>,
+        // render: text => <a>{text}</a>,
     },
     {
         title: 'Age',
