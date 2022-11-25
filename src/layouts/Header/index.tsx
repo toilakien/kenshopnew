@@ -31,7 +31,7 @@ const Header = () => {
       key: "2",
       icon: <LogoutOutlined />,
 
-      label: <button onClick={() => logout()}>Logout</button>,
+      label: <a  onClick={() => logout()}>Logout</a>,
     },
   ];
   return (
@@ -93,6 +93,7 @@ const Header = () => {
                 items,
               }}
               placement="bottomLeft"
+              overlayStyle={{}}
             >
               <Button
                 style={{ display: "flex", alignItems: "center" }}
