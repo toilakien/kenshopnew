@@ -21,7 +21,6 @@ import useAuth from "../../hook/useAuth";
 const Header = () => {
   const { logout } = useAuth();
   const { Header } = Layout;
-  const [open, setOpen] = useState<boolean>(false);
   const items = [
     {
       key: "1",
@@ -89,8 +88,7 @@ const Header = () => {
               <Button shape="circle" icon={<NotificationOutlined />} />
             </Tooltip>
             <Dropdown
-              onOpenChange={() => setOpen(false)}
-              open={open}
+              trigger={["click"]}
               menu={{
                 items,
               }}
@@ -98,7 +96,6 @@ const Header = () => {
             >
               <Button
                 style={{ display: "flex", alignItems: "center" }}
-                onClick={() => setOpen(true)}
                 type="link"
               >
                 <Avatar
