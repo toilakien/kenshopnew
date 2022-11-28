@@ -6,26 +6,32 @@ import ProductPage from "../pages/ProductPage";
 import { AuthGrand } from "../utils/AuthGrand/AuthGrand";
 
 const MainRoute = {
-    path: "/",
-    element: (
-        <AuthGrand>
-            <BaseLayout />
-        </AuthGrand>
-    ),
-    children: [
+  path: "/",
+  element: (
+    <AuthGrand>
+      <BaseLayout />
+    </AuthGrand>
+  ),
+  children: [
+    {
+      path: "/dashbound",
+      element: <Dashbound />,
+    },
+    {
+      path: "/product",
+      element: <ProductPage />,
+      children: [
         {
-            path: '/dashbound',
-            element: <Dashbound />
+          path: "/product/oto",
+          element: <ProductPage />,
         },
-        {
-            path: '/product',
-            element: <ProductPage />
-        },
-        {
-            path: '/category',
-            element: <CategoryPage />
-        },
-    ]
+      ],
+    },
+    {
+      path: "/category",
+      element: <CategoryPage />,
+    },
+  ],
 };
 
 export default MainRoute;

@@ -1,10 +1,6 @@
 import { Layout, Menu, MenuProps } from "antd";
 import React from "react";
-import {
-  LaptopOutlined,
-  UserOutlined,
-  CarOutlined,
-} from "@ant-design/icons";
+import { LaptopOutlined, UserOutlined, CarOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const SideBar = () => {
   const basenav = [
@@ -28,7 +24,7 @@ const SideBar = () => {
       children: [
         {
           icon: (
-            <Link to="/product">
+            <Link to="/product/oto">
               <CarOutlined />
             </Link>
           ),
