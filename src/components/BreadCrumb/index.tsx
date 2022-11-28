@@ -31,9 +31,9 @@ const Breadcrumbs = () => {
   );
 };
 const breadcrumbNameMap: Record<string, string> = {
-  "/dashbound": "dashbound",
-  "/product": "product",
-  "/product/oto": "oto",
-  "/category": "category",
+  "/dashbound": "Dashbound",
+  "/product": "Sản phẩm",
+  "/product/oto": "Ôtô ",
+  "/category": "Danh mục",
 };
 export default Breadcrumbs;
