@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import useAuth from "../../../hook/useAuth";
 import formstyles from "./form.module.css";
 import { notification } from "antd";
+import google from "../../../../src/google.png";
 const LoginForm = () => {
   const { login } = useAuth();
   const validate = (values: any) => {
@@ -13,11 +14,9 @@ const LoginForm = () => {
     } else if (values.username.length < 4) {
       errors.username = "Must be 4 characters or less";
     }
-
     if (!values.password) {
       errors.password = "Required";
     }
-
     return errors;
   };
   const formik = useFormik({
@@ -45,6 +44,19 @@ const LoginForm = () => {
           formik.handleSubmit(e);
         }}
       >
+        <hr style={{ border: "1px solid #ddd", backgroundColor: "#ddd" }} />
+        <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1" className={formstyles["logingoogle"]}>
+          <div>
+            <img src={google} alt="" />
+          </div>
+          <div>
+            <h2>Sign in with Google</h2>
+          </div>
+        </a>
+        <hr style={{ border: "1px solid #ddd", backgroundColor: "#ddd" }} />
+        <h4 style={{textAlign:"center"}}>Or login with acount and password</h4>
+        <hr style={{ border: "1px solid #ddd", backgroundColor: "#ddd" }} />
+
         <div className={formstyles["form-item"]}>
           <label>Username:</label>
           <input

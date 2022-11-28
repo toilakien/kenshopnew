@@ -1,4 +1,5 @@
 .login-wrapper {
+  border-radius: 10px;
   width: 20%;
   padding: 20px;
   margin: 0 auto;
@@ -13,6 +14,29 @@
   font-family: sans-serif;
 }
 .form-wrapper {
+}
+.logingoogle {
+  position: relative;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #5e35b1;
+  background-color: #5e35b1;
+  border-radius: 5px;
+}
+.logingoogle > div > img {
+  width: 40px;
+  height: 38px;
+  border-radius: 5px;
+}
+.logingoogle h2 {
+  font-size: 1rem;
+  color: #fff;
+  position: relative;
+  left:10px;
+  text-align: center;
 }
 .form-item {
   margin-top: 10px;
@@ -29,15 +53,17 @@
   border: 1px solid #ddd;
 }
 .form-item button {
-  width: 100px;
+  width: 100%;
   position: relative;
-  left: calc(50% - 50px);
+  /* left: calc(50% - 50px); */
   border: 1px solid #ddd;
-  background-color: none;
-  color: #111;
+  background-color:  #5e35b1;
+  
+  color: #ffffff;
   cursor: pointer;
   opacity: 0.9;
   font-family: sans-serif;
+  border-radius: 5px;
 }
 .form-item button:hover {
   opacity: 1;
