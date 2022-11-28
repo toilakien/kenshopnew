@@ -44,8 +44,11 @@ const LoginForm = () => {
           formik.handleSubmit(e);
         }}
       >
-        <hr style={{ border: "1px solid #ddd", backgroundColor: "#ddd" }} />
-        <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1" className={formstyles["logingoogle"]}>
+        <hr />
+        <a
+          href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1"
+          className={formstyles["logingoogle"]}
+        >
           <div>
             <img src={google} alt="" />
           </div>
@@ -53,9 +56,11 @@ const LoginForm = () => {
             <h2>Sign in with Google</h2>
           </div>
         </a>
-        <hr style={{ border: "1px solid #ddd", backgroundColor: "#ddd" }} />
-        <h4 style={{textAlign:"center"}}>Or login with acount and password</h4>
-        <hr style={{ border: "1px solid #ddd", backgroundColor: "#ddd" }} />
+        <hr />
+        <h4 style={{ textAlign: "center", padding: "5px 0" }}>
+          Or login with acount and password
+        </h4>
+        <hr style={{ borderLeft: "none" }} />
 
         <div className={formstyles["form-item"]}>
           <label>Username:</label>
