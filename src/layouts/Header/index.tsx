@@ -34,6 +34,7 @@ const Header = () => {
       label: <a onClick={() => logout()}>Logout</a>,
     },
   ];
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
   return (
     <Header
       style={{ padding: 0, backgroundColor: "#f5f5f5" }}
@@ -106,9 +107,9 @@ const Header = () => {
                 />
                 <Typography>
                   <Typography.Title style={{ margin: 0 }} level={5}>
-                    Kienlv
+                    {user.username}
                   </Typography.Title>
-                  <Typography.Text>Kienlv@gamil.com</Typography.Text>
+                  <Typography.Text>{user.username}</Typography.Text>
                 </Typography>
                 <DownOutlined style={{ color: "black" }} />
               </Button>
