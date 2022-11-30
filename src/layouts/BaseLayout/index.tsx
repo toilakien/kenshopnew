@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header";
 import { Layout } from "antd";
 import SideBar from "../SideBar";
-import { Outlet, useActionData, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import BreadCrumb from "../../components/BreadCrumb";
 const BaseLayout = () => {
   const { Content } = Layout;

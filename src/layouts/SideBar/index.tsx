@@ -67,12 +67,10 @@ const SideBar = () => {
   const { Sider } = Layout;
   const items2: MenuProps["items"] = basenav.map((base, index) => {
     const key = String(index + 1);
-
     return {
       key: key,
       icon: React.createElement(base.icon),
       label: base.label,
-
       children: base.children.map((element, index) => {
         return {
           key: index,

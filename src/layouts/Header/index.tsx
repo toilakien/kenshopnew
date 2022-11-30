@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Layout,
   Row,
@@ -14,7 +15,6 @@ import {
   NotificationOutlined,
   QuestionOutlined,
 } from "@ant-design/icons";
-import React, { useState } from "react";
 import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 import logo from "../../../src/logo.png";
 import useAuth from "../../hook/useAuth";
@@ -31,7 +31,7 @@ const Header = () => {
       key: "2",
       icon: <LogoutOutlined />,
 
-      label: <a  onClick={() => logout()}>Logout</a>,
+      label: <a onClick={() => logout()}>Logout</a>,
     },
   ];
   return (

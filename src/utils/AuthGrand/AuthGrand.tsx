@@ -6,7 +6,6 @@ export const AuthGrand = ({ children }: { children: any }) => {
   const navigate = useNavigate();
   useAuth();
   const a = localStorage.getItem("serviceToken");
-  console.log(typeof a);
   React.useEffect(() => {
     if (!a) {
       navigate("/login");

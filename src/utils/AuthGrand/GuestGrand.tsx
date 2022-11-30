@@ -6,7 +6,6 @@ export const GuestGrand = ({ children }: { children: any }) => {
   const navigate = useNavigate();
   useAuth();
   const a = localStorage.getItem("serviceToken");
-  console.log("GuestGrand", a);
 
   React.useEffect(() => {
     if (a) {

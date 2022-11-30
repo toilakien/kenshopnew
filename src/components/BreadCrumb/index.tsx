@@ -22,7 +22,7 @@ const Breadcrumbs = () => {
   ].concat(extraBreadcrumbItems);
 
   return (
-    <div className="demo">
+    <div>
       <Routes>
         <Route path="/" element={<Dashbound />} />
       </Routes>
