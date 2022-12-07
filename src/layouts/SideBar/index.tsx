@@ -1,17 +1,17 @@
 import { Layout, Menu, MenuProps } from "antd";
 import React from "react";
-import { LaptopOutlined, UserOutlined, CarOutlined } from "@ant-design/icons";
+import { LaptopOutlined, UserOutlined, CarOutlined, FundViewOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const SideBar = () => {
   const basenav = [
     {
-      icon: UserOutlined,
+      icon: FundViewOutlined,
       label: "Dashbound",
       children: [
         {
           icon: (
             <Link to="/dashbound">
-              <CarOutlined />
+              <FundViewOutlined />
             </Link>
           ),
           label: "Dashbound",
@@ -82,12 +82,12 @@ const SideBar = () => {
   });
 
   return (
-    <Sider width={200} style={{ background: "#fff" }}>
+    <Sider width={200} style={{backgroundColor: "fff" }}>
       <Menu
         mode="inline"
         // defaultSelectedKeys={["1"]}
         // defaultOpenKeys={["sub1"]}
-        style={{ height: "100%", borderRight: 0 }}
+        style={{ height:"100%",backgroundColor:"fff"}}
         items={items2}
       />
     </Sider>

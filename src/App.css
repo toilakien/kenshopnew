@@ -1,0 +1,10 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+.ant-layout-sider-children{
+    margin: 0 !important;
+    padding: 0 !important;
+}

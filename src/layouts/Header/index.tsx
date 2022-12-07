@@ -25,7 +25,7 @@ const Header = () => {
     {
       key: "1",
       icon: <SettingOutlined />,
-      label: <a href="#">Acount seting</a>,
+      label: <a >Acount seting</a>,
     },
     {
       key: "2",
