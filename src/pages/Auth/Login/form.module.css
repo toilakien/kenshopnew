@@ -37,7 +37,7 @@
   font-size: 1rem;
   color: #fff;
   position: relative;
-  left:10px;
+  left: 10px;
   text-align: center;
 }
 .form-item {
@@ -53,6 +53,7 @@
 .form-item input {
   outline: none;
   border: 1px solid #ddd;
+  font-size: 1rem;
 }
 .form-item button {
   font-size: 1rem;
@@ -61,8 +62,8 @@
   position: relative;
   /* left: calc(50% - 50px); */
   border: 1px solid #ddd;
-  background-color:  #5e35b1;
-  
+  background-color: #5e35b1;
+
   color: #ffffff;
   cursor: pointer;
   opacity: 0.9;
