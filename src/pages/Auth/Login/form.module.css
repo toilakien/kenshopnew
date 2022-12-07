@@ -9,6 +9,7 @@
   box-sizing: border-box;
 }
 .login-title h1 {
+  font-size: 1.4rem;
   text-align: center;
   text-transform: uppercase;
   font-family: sans-serif;
@@ -54,6 +55,7 @@
   border: 1px solid #ddd;
 }
 .form-item button {
+  font-size: 1rem;
   width: 100%;
   height: 30px;
   position: relative;

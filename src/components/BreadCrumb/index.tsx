@@ -1,4 +1,4 @@
-import { Alert, Breadcrumb } from "antd";
+import { Breadcrumb } from "antd";
 import React from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import Dashbound from "../../pages/Dashbound";
@@ -26,7 +26,7 @@ const Breadcrumbs = () => {
       <Routes>
         <Route path="/" element={<Dashbound />} />
       </Routes>
-      <Breadcrumb>{breadcrumbItems}</Breadcrumb>
+      <Breadcrumb style={{padding:10}}>{breadcrumbItems}</Breadcrumb>
     </div>
   );
 };

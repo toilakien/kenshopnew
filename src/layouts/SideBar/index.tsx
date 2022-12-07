@@ -40,8 +40,46 @@ const SideBar = () => {
           label: "Xe máy",
         },
         {
-          icon: <Link to=""></Link>,
+          icon: <Link to="">
+            <LaptopOutlined/>
+          </Link>,
           label: "Xe Điện",
+        },
+      ],
+    },
+    {
+      icon: LaptopOutlined,
+      label: "Danh mục",
+      children: [
+        {
+          icon: <Link to="/category"></Link>,
+          label: "New",
+        },
+        {
+          icon: <Link to=""></Link>,
+          label: "770",
+        },
+        {
+          icon: <Link to=""></Link>,
+          label: "991",
+        },
+      ],
+    },
+    {
+      icon: LaptopOutlined,
+      label: "Danh mục",
+      children: [
+        {
+          icon: <Link to="/category"></Link>,
+          label: "New",
+        },
+        {
+          icon: <Link to=""></Link>,
+          label: "770",
+        },
+        {
+          icon: <Link to=""></Link>,
+          label: "991",
         },
       ],
     },
@@ -87,7 +125,7 @@ const SideBar = () => {
         mode="inline"
         // defaultSelectedKeys={["1"]}
         // defaultOpenKeys={["sub1"]}
-        style={{ height:"100%",backgroundColor:"fff"}}
+        style={{ height:"100%",backgroundColor:"#fff"}}
         items={items2}
       />
     </Sider>

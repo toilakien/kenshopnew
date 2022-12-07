@@ -25,7 +25,7 @@ const Header = () => {
     {
       key: "1",
       icon: <SettingOutlined />,
-      label: <a >Acount seting</a>,
+      label: <a href="/">Acount seting</a>,
     },
     {
       key: "2",
@@ -37,7 +37,7 @@ const Header = () => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   return (
     <Header
-      style={{ padding: 0, backgroundColor: "#f5f5f5" }}
+      style={{ padding: 0, backgroundColor: "#fff",borderBottom:"1px solid #ddd",boxShadow:"2px 2px 0 0 #ddd" }}
       className="header"
     >
       <Row>
