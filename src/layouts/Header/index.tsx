@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./header.module.css";
 import {
   Layout,
   Row,
@@ -14,6 +15,7 @@ import {
   DownOutlined,
   NotificationOutlined,
   QuestionOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 import logo from "../../../src/logo.png";
@@ -21,23 +23,49 @@ import useAuth from "../../hook/useAuth";
 const Header = () => {
   const { logout } = useAuth();
   const { Header } = Layout;
-  const items = [
-    {
-      key: "1",
-      icon: <SettingOutlined />,
-      label: <a href="/">Acount seting</a>,
-    },
-    {
-      key: "2",
-      icon: <LogoutOutlined />,
-
-      label: <a onClick={() => logout()}>Logout</a>,
-    },
-  ];
   const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const DropdownRender = () => {
+    return (
+      <div className={styles["wrapperDropdown"]}>
+      
+        <a
+          style={{
+            fontWeight: 600,
+            border: "1px solid #f8f8f8",
+            borderRadius: "10px",
+            zIndex: 1,
+            backgroundColor: "#f8f8f8",
+          }}
+          className={styles["wrapperDropdownItem"]}
+        >
+          <Avatar src="https://didongviet.vn/dchannel/wp-content/uploads/2022/01/cute-didongviet.jpg"/>
+          <span >{user.username}</span>
+        </a>
+        <a className={styles["wrapperDropdownItem"]}>
+          <>
+            <SettingOutlined />
+          </>
+          <span className={styles["text"]}>Acount seting</span>
+        </a>
+        <a onClick={() => logout()} className={styles["wrapperDropdownItem"]}>
+          <>
+            <LogoutOutlined />
+          </>
+          <span className={styles["text"]}>Logout</span>
+        </a>
+      </div>
+    );
+  };
+
   return (
     <Header
-      style={{ padding: 0, backgroundColor: "#fff",borderBottom:"1px solid #ddd",boxShadow:"2px 2px 0 0 #ddd" }}
+      style={{
+        padding: 0,
+        margin: 0,
+        backgroundColor: "#fff",
+        borderBottom: "1px solid #ddd",
+        boxShadow: "2px 2px 0 0 #ddd",
+      }}
       className="header"
     >
       <Row>
@@ -49,37 +77,21 @@ const Header = () => {
             position: "relative",
             left: "20px",
           }}
-          span={4}
+          span={12}
         >
           <Avatar
             style={{ border: "1px solid #1890ff" }}
-            size={50}
+            size={30}
             src={logo}
           />
           <Typography.Text
-            style={{
-              textTransform: "uppercase",
-              fontSize: "1.4rem",
-              marginLeft: "10px",
-              color: "#1890ff",
-            }}
+            strong
+            style={{ textTransform: "uppercase", marginLeft: "10px" }}
           >
-            shopnew
+            Webside quản trị chuyên nghiệp
           </Typography.Text>
         </Col>
-        <Col
-          style={{
-            display: "flex",
-            justifyContent: "left",
-            alignItems: "center",
-          }}
-          span={8}
-        >
-          <Typography.Text style={{ fontSize: "1.4rem", color: "#1890ff" }}>
-            {" "}
-            Trang chủ
-          </Typography.Text>
-        </Col>
+
         <Col span={12}>
           <Space style={{ display: "flex", justifyContent: "end" }}>
             <Tooltip title="Question">
@@ -90,9 +102,7 @@ const Header = () => {
             </Tooltip>
             <Dropdown
               trigger={["click"]}
-              menu={{
-                items,
-              }}
+              dropdownRender={DropdownRender}
               placement="bottomLeft"
               overlayStyle={{}}
             >
@@ -101,17 +111,23 @@ const Header = () => {
                 type="link"
               >
                 <Avatar
-                  size={50}
+                  size={40}
                   src="https://didongviet.vn/dchannel/wp-content/uploads/2022/01/cute-didongviet.jpg"
-                  style={{ marginRight: "10px" }}
                 />
-                <Typography>
-                  <Typography.Title style={{ margin: 0 }} level={5}>
-                    {user.username}
-                  </Typography.Title>
-                  <Typography.Text>{user.username}</Typography.Text>
-                </Typography>
-                <DownOutlined style={{ color: "black" }} />
+
+                <DownOutlined
+                  style={{
+                    height: "15px",
+                    padding: 2,
+                    background: "#fff",
+                    color: "black",
+                    border: "1px solid #111",
+                    borderRadius: "100%",
+                    position: "relative",
+                    right: "20px",
+                    top: "15px",
+                  }}
+                />
               </Button>
             </Dropdown>
           </Space>

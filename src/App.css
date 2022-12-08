@@ -9,6 +9,12 @@ body {
   margin: 0 ;
   padding: 0;
 }
+.ant-menu-submenu-title{
+  border-bottom:1px solid #ddd;
+}
+.ant-menu-item{
+  border-bottom:1px solid #ddd;
+}
 .ant-menu-item:hover {
   background-color: #ddd;
   animation-name: wideleft;
