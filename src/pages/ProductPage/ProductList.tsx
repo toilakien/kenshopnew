@@ -1,98 +1,133 @@
-import { Space, Table, Tag } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
-import React from 'react';
+import { AudioOutlined } from "@ant-design/icons";
+import { Button, Input, Row, Select, Space, Table } from "antd";
+import Col from "antd/es/grid/col";
+import Typography from "antd/lib/typography/Typography";
+import React from "react";
+import styles from "./product.module.css";
+const ProductList = () => {
+  const { Option } = Select;
+  const dataSource = [
+    {
+      key: "1",
+      name: "Mike",
+      description: 32,
+      status: true,
+      address:"Hà nội",
+      createdAt:"20/10/2010",
+      updatedAt:"20/10/2023"
+    },
+    {
+      key: "2",
+      name: "John",
+      description: 42,
+      status: false,
+      address:"Hà nội",
+      createdAt:"20/10/2010",
+      updatedAt:"20/10/2023",
+    },
+    {
+      key: "2",
+      name: "John",
+      description: 42,
+      status: true,
+      address:"Hà nội",
+      createdAt:"20/10/2010",
+      updatedAt:"20/10/2023"
+    },
+  ];
 
-interface DataType {
-    key: string;
-    stt?:number,
-    name: string;
-    age: number;
-    address: string;
-    tags: string[];
-}
+  const columns: any = [
+    {
+      title: "STT",
+      align: "left",
+      dataIndex: "key",
+      key: "key",
+    },
+    {
+      title: "Name",
+      align: "left",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      render: (value: any) => {
+        return value ? (
+          <span className={styles["chip bg-green"]}>True</span>
+        ) : (
+          <span>False</span>
+        );
+      },
+    },
+    {
+      title: "Address",
+      align: "right",
+      dataIndex: "address",
+      key: "address",
+    },
+    {
+      title: "Created_At",
+      align: "right",
+      dataIndex: "createdAt",
+      key: "createdAt",
+    },
+    {
+      title: "Updated_At",
+      align: "right",
+      dataIndex: "updatedAt",
+      key: "updatedAt",
+    },
+    {
+      title: "Tools",
+      align:"center",
+      render: () => {
+        return (
+          <div>
+            <Button>delete</Button>&nbsp;
+            <Button>delete</Button>
+          </div>
+        );
+      },
+    },
+  ];
+  const { Search } = Input;
 
-const columns: ColumnsType<DataType> = [
-    {
-        title: 'Stt',
-        dataIndex: 'stt',
-        key: 'stt',
-        // render: text => <a>{text}</a>,
-    },
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-        // render: text => <a>{text}</a>,
-    },
-    {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-    },
-    {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-    },
-    {
-        title: 'Tags',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map(tag => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Invite {record.name}</a>
-                <a>Delete</a>
-            </Space>
-        ),
-    },
-];
-
-const data: DataType[] = [
-    {
-        key: '1',
-        stt:1,
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        stt:2,
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-    },
-    {
-        key: '3',
-        stt:3,
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-];
-
-const ProductList: React.FC = () => <Table columns={columns} dataSource={data} />;
+  const onSearch = (value: string) => console.log(value);
+  return (
+    <Row>
+      <Col span={24}>
+        <Row>
+          <Col span={6}>
+            <Search
+              placeholder="Search ..... ?"
+              size="middle"
+              onSearch={onSearch}
+            />
+          </Col>
+          <Col span={2}></Col>
+          <Col span={6}>
+            Filter:&nbsp;
+            <Select size="small" defaultValue="All">
+              <Option value="All">All</Option>
+              <Option value="Nam">Nam</Option>
+              <Option value="Nữ">Nữ</Option>
+            </Select>
+          </Col>
+        </Row>
+      </Col>
+      <Col span={24}>
+        <Table
+          style={{ marginTop: "20px" }}
+          bordered
+          showHeader
+          columns={columns}
+          dataSource={dataSource}
+        />
+      </Col>
+    </Row>
+  );
+};
 
 export default ProductList;

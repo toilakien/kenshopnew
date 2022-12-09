@@ -17,7 +17,7 @@ const ProductPage = () => {
           Product
         </Typography>
       </Col>
-      <Col span={24}>
+      <Col style={{marginTop:10}} span={24}>
         <ProductList />
       </Col>
     </Row>
