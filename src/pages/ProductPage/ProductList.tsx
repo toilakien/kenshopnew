@@ -12,27 +12,27 @@ const ProductList = () => {
       name: "Mike",
       description: 32,
       status: true,
-      address:"Hà nội",
-      createdAt:"20/10/2010",
-      updatedAt:"20/10/2023"
+      address: "Hà nội",
+      createdAt: "20/10/2010",
+      updatedAt: "20/10/2023",
     },
     {
       key: "2",
       name: "John",
       description: 42,
       status: false,
-      address:"Hà nội",
-      createdAt:"20/10/2010",
-      updatedAt:"20/10/2023",
+      address: "Hà nội",
+      createdAt: "20/10/2010",
+      updatedAt: "20/10/2023",
     },
     {
       key: "2",
       name: "John",
       description: 42,
       status: true,
-      address:"Hà nội",
-      createdAt:"20/10/2010",
-      updatedAt:"20/10/2023"
+      address: "Hà nội",
+      createdAt: "20/10/2010",
+      updatedAt: "20/10/2023",
     },
   ];
 
@@ -81,7 +81,7 @@ const ProductList = () => {
     },
     {
       title: "Tools",
-      align:"center",
+      align: "center",
       render: () => {
         return (
           <div>
@@ -108,11 +108,15 @@ const ProductList = () => {
           </Col>
           <Col span={2}></Col>
           <Col span={6}>
-            Filter:&nbsp;
+            Show:&nbsp;
             <Select size="small" defaultValue="All">
               <Option value="All">All</Option>
               <Option value="Nam">Nam</Option>
               <Option value="Nữ">Nữ</Option>
+            </Select>
+            <Select size="small">
+              <Option value="A-Z">A-Z</Option>
+              <Option value="Z-A">Z-A</Option>
             </Select>
           </Col>
         </Row>

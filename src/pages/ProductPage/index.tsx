@@ -13,11 +13,19 @@ const ProductPage = () => {
           alignItems: "center",
         }}
       >
-        <Typography style={{padding :"10px 0",position:"relative",left:20,fontSize:"1.4rem ",fontWeight:600}}>
+        <Typography
+          style={{
+            padding: "10px 0",
+            position: "relative",
+            left: 20,
+            fontSize: "1.4rem ",
+            fontWeight: 600,
+          }}
+        >
           Product
         </Typography>
       </Col>
-      <Col style={{marginTop:10}} span={24}>
+      <Col style={{ marginTop: 10 }} span={24}>
         <ProductList />
       </Col>
     </Row>

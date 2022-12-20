@@ -44,7 +44,7 @@ const LoginForm = () => {
           formik.handleSubmit(e);
         }}
       >
-        <hr />
+        {/* <hr />
         <a
           href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1"
           className={formstyles["logingoogle"]}
@@ -57,10 +57,10 @@ const LoginForm = () => {
           </div>
         </a>
         <hr />
-        <h4 style={{fontSize:"1rem",textAlign: "center", padding: "5px 0" }}>
+        <h4 style={{ fontSize: "1rem", textAlign: "center", padding: "5px 0" }}>
           Or login with acount and password
         </h4>
-        <hr style={{ borderLeft: "none" }} />
+        <hr style={{ borderLeft: "none" }} /> */}
 
         <div className={formstyles["form-item"]}>
           <label>Username:</label>
@@ -73,7 +73,7 @@ const LoginForm = () => {
             onBlur={formik.handleBlur}
             value={formik.values.username}
           />
-          <span style={{ fontSize:"0.8rem",color: "red" }}>
+          <span style={{ fontSize: "0.8rem", color: "red" }}>
             {formik.errors.username ? (
               <div>{formik.errors.username}</div>
             ) : null}
@@ -90,7 +90,7 @@ const LoginForm = () => {
             value={formik.values.password}
             onBlur={formik.handleBlur}
           />
-          <span style={{ fontSize:"0.8rem",color: "red" }}>
+          <span style={{ fontSize: "0.8rem", color: "red" }}>
             {formik.errors.password ? (
               <div>{formik.errors.password}</div>
             ) : null}
