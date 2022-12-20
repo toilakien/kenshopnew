@@ -1,5 +1,6 @@
 import React from "react";
 import BaseLayout from "../layouts/BaseLayout";
+import AcountSetting from "../pages/AcountSetting";
 import CategoryPage from "../pages/CategoryPage";
 import Dashbound from "../pages/Dashbound";
 import ProductPage from "../pages/ProductPage";
@@ -30,6 +31,10 @@ const MainRoute = {
     {
       path: "/category",
       element: <CategoryPage />,
+    },
+    {
+      path: "/acountsetting",
+      element: <AcountSetting />,
     },
   ],
 };

@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import useAuth from "../../../hook/useAuth";
 import formstyles from "./form.module.css";
 import { notification } from "antd";
-import google from "../../../../src/google.png";
+// import google from "../../../../src/google.png";
 const LoginForm = () => {
   const { login } = useAuth();
   const validate = (values: any) => {

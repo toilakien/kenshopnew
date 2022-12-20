@@ -27,7 +27,6 @@ const Header = () => {
   const DropdownRender = () => {
     return (
       <div className={styles["wrapperDropdown"]}>
-      
         <a
           style={{
             fontWeight: 600,
@@ -38,10 +37,10 @@ const Header = () => {
           }}
           className={styles["wrapperDropdownItem"]}
         >
-          <Avatar src="https://didongviet.vn/dchannel/wp-content/uploads/2022/01/cute-didongviet.jpg"/>
-          <span >{user.username}</span>
+          <Avatar src="https://didongviet.vn/dchannel/wp-content/uploads/2022/01/cute-didongviet.jpg" />
+          <span>{user.username}</span>
         </a>
-        <a className={styles["wrapperDropdownItem"]}>
+        <a href="/acountsetting" className={styles["wrapperDropdownItem"]}>
           <>
             <SettingOutlined />
           </>
