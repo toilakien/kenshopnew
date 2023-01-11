@@ -26,7 +26,7 @@ const LoginForm = () => {
     },
     validate,
     onSubmit: async (values) => {
-      await login(values.username, values.password).then(
+      await login(values.username, values.password, "true").then(
         notification.success({ message: "Login successfully !" })
       );
     },

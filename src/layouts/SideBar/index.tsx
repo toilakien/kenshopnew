@@ -1,6 +1,11 @@
 import { Layout, Menu, MenuProps } from "antd";
 import React from "react";
-import { LaptopOutlined, UserOutlined, CarOutlined, FundViewOutlined } from "@ant-design/icons";
+import {
+  LaptopOutlined,
+  UserOutlined,
+  CarOutlined,
+  FundViewOutlined,
+} from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const SideBar = () => {
   const basenav = [
@@ -40,9 +45,11 @@ const SideBar = () => {
           label: "Xe máy",
         },
         {
-          icon: <Link to="">
-            <LaptopOutlined/>
-          </Link>,
+          icon: (
+            <Link to="">
+              <LaptopOutlined />
+            </Link>
+          ),
           label: "Xe Điện",
         },
       ],
@@ -85,6 +92,16 @@ const SideBar = () => {
     },
     {
       icon: LaptopOutlined,
+      label: "Books",
+      children: [
+        {
+          icon: <Link to="/books"></Link>,
+          label: "Book",
+        },
+      ],
+    },
+    {
+      icon: LaptopOutlined,
       label: "Danh mục",
       children: [
         {
@@ -120,12 +137,12 @@ const SideBar = () => {
   });
 
   return (
-    <Sider width={200} style={{backgroundColor: "#fff" }}>
+    <Sider width={200} style={{ backgroundColor: "#fff" }}>
       <Menu
         mode="inline"
-        // defaultSelectedKeys={["1"]}  
+        // defaultSelectedKeys={["1"]}
         // defaultOpenKeys={["sub1"]}
-        style={{ height:"100%",backgroundColor:"#fff",color:"#111"}}
+        style={{ height: "100%", backgroundColor: "#fff", color: "#111" }}
         items={items2}
       />
     </Sider>

@@ -1,32 +1,30 @@
-import React from "react";
-import { Tabs } from "antd";
+import { Row, Col, Avatar, Typography } from "antd";
+import React, { useState } from "react";
+import TabSetting from "./TabSetting";
+import UploadImage from "./UploadImage";
 
-const onChange = (key: string) => {
-  console.log(key);
+const AcountSetting = () => {
+  const [imageUpload, setImageUpload] = useState<any>("");
+  return (
+    <Row>
+      <Col span={8}>
+        <Row>
+          <Avatar size={80} src={imageUpload} />
+        </Row>
+        <Row>
+          Name:
+          <Typography>Lê Văn Kiên</Typography>
+        </Row>
+        <Row>
+          Change image:
+          <UploadImage />
+        </Row>
+      </Col>
+      <Col span={16}>
+        <TabSetting />
+      </Col>
+    </Row>
+  );
 };
-
-const AcountSetting: React.FC = () => (
-  <Tabs
-    defaultActiveKey="1"
-    onChange={onChange}
-    items={[
-      {
-        label: `Tab 1`,
-        key: "1",
-        children: `Content of Tab Pane 1`,
-      },
-      {
-        label: `Tab 2`,
-        key: "2",
-        children: `Content of Tab Pane 2`,
-      },
-      {
-        label: `Tab 3`,
-        key: "3",
-        children: `Content of Tab Pane 3`,
-      },
-    ]}
-  />
-);
 
 export default AcountSetting;

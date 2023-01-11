@@ -66,19 +66,14 @@ const authReducer = (state = init, action: ACTION) => {
 export const JWTProvider = ({ children }: { children: any }) => {
   const [state, dispatch] = React.useReducer(authReducer, init);
 
-  const login = async (
-    username: string,
-    password: string,
-    remember_me?: boolean
-  ) => {
+  const login = async (username: string, password: string, remember?: any) => {
     const response = await axios.post(API_URL.auth.login, {
       username,
       password,
+      remember,
     });
-    console.log(response);
 
-    const { token, user } = response?.data;
-    console.log(token);
+    const { token, user } = response?.data.data;
 
     setSession(token);
 

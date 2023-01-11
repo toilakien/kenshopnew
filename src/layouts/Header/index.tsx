@@ -15,7 +15,6 @@ import {
   DownOutlined,
   NotificationOutlined,
   QuestionOutlined,
-  UserOutlined,
 } from "@ant-design/icons";
 import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 import logo from "../../../src/logo.png";
@@ -32,7 +31,7 @@ const Header = () => {
             fontWeight: 600,
             border: "1px solid #f8f8f8",
             borderRadius: "10px",
-            zIndex: 1,
+            zIndex: 999,
             backgroundColor: "#f8f8f8",
           }}
           className={styles["wrapperDropdownItem"]}
@@ -87,7 +86,7 @@ const Header = () => {
             strong
             style={{ textTransform: "uppercase", marginLeft: "10px" }}
           >
-            Webside quản trị chuyên nghiệp
+            MANAGE WEBSITE
           </Typography.Text>
         </Col>
 

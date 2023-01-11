@@ -7,7 +7,7 @@ const axiosServices = axios.create({
 });
 // interceptor for http
 axiosServices.interceptors.response.use(
-  (response:any) => response,
+  (response: any) => response,
   (error: AxiosError) => {
     console.log(error);
   }
