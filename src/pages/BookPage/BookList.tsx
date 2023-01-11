@@ -1,53 +1,30 @@
-import { AudioOutlined } from "@ant-design/icons";
 import { Button, Input, Row, Select, Space, Table } from "antd";
 import Col from "antd/es/grid/col";
-import Typography from "antd/lib/typography/Typography";
 import React from "react";
 import styles from "./book.module.css";
-const BookList = () => {
+const BookList = ({ books }: any) => {
   const { Option } = Select;
-  const dataSource = [
-    {
-      key: "1",
-      name: "Mike",
-      description: 32,
-      status: true,
-      address: "Hà nội",
-      createdAt: "20/10/2010",
-      updatedAt: "20/10/2023",
-    },
-    {
-      key: "2",
-      name: "John",
-      description: 42,
-      status: false,
-      address: "Hà nội",
-      createdAt: "20/10/2010",
-      updatedAt: "20/10/2023",
-    },
-    {
-      key: "2",
-      name: "John",
-      description: 42,
-      status: true,
-      address: "Hà nội",
-      createdAt: "20/10/2010",
-      updatedAt: "20/10/2023",
-    },
-  ];
+
+  console.log(books);
 
   const columns: any = [
     {
       title: "STT",
       align: "left",
-      dataIndex: "key",
-      key: "key",
+      dataIndex: "_id",
+      key: "_id",
     },
     {
       title: "Name",
       align: "left",
       dataIndex: "name",
       key: "name",
+    },
+    {
+      title: "Description",
+      align: "right",
+      dataIndex: "description",
+      key: "description",
     },
     {
       title: "Status",
@@ -57,15 +34,41 @@ const BookList = () => {
         return value ? (
           <span className={styles["chip bg-green"]}>True</span>
         ) : (
-          <span>False</span>
+          <span className={styles["chip bg-green"]}>False</span>
         );
       },
     },
     {
-      title: "Address",
+      title: "Sell Number",
       align: "right",
-      dataIndex: "address",
-      key: "address",
+      dataIndex: "sellNumber",
+      key: "sellNumber",
+    },
+    {
+      title: "Author",
+      align: "right",
+      dataIndex: "author",
+      key: "author",
+    },
+    {
+      title: "Price",
+      align: "right",
+      dataIndex: "price",
+      key: "price",
+    },
+    {
+      title: "Image",
+      align: "right",
+      dataIndex: "image",
+      key: "image",
+      render: (value: any) => {
+        return (
+          <img
+            width="100px"
+            src={`${process.env.REACT_APP_IMAGE_URL}/${value}`}
+          />
+        );
+      },
     },
     {
       title: "Created_At",
@@ -85,8 +88,8 @@ const BookList = () => {
       render: () => {
         return (
           <div>
-            <Button>delete</Button>&nbsp;
-            <Button>delete</Button>
+            <Button>Delete</Button>&nbsp;
+            <Button>Edit</Button>
           </div>
         );
       },
@@ -127,7 +130,7 @@ const BookList = () => {
           bordered
           showHeader
           columns={columns}
-          dataSource={dataSource}
+          dataSource={books}
         />
       </Col>
     </Row>

@@ -5,8 +5,8 @@ const API_URL = {
   product: {},
   category: {},
   books: {
-    createBook: `/books`,
-    getAllBook: `/`,
+    createBook: `/book/create`,
+    getAllBook: `/book`,
     deleteBook: (id: any) => `/books/${id}`,
   },
 };
